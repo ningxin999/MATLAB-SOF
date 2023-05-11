@@ -11,8 +11,15 @@ delta=lsqcurvefit(func,[5],lags,ACF);
 ACF1= func(delta,lags);
 
 %draw the figure together
-scatter(0.1.*lags,ACF)
-hold on;
+
 plot(0.1.*lags,ACF1);
+hold on;
+scatter(0.1.*lags,ACF)
+
 xlim([0,1.4]);
 ylim([-0.2,1.2]);
+
+title("SoF fitting-use of ACFM",'FontSize',15);
+xlabel('distance \tau/D');
+ylabel("Correaltion coeficient");
+box on;
